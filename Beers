@@ -1,0 +1,14 @@
+CREATE TABLE Beers ( name origin CHAR(20) PRIMARY KEY, CHAR (120)
+CREATE TABLE Sells ( bar CHAR(20), beer CHAR(20), price REAL, FOREIGN KEY(beer) REFERENCES Beers(name) ON DELETE SET NULL, ON UPDATE CASCADE
+We execute the following two queries 
+DELETE FROM Beers where name 'B1' 
+UPDATE Beers set Name 'B4' Where Name-'B3'; 
+Now, what does this query return? 
+SELECT SUM(Price) FROM Sells WHERE Sells.Beer IS NOT NULL; b) 10 c) 13 d) 20
+
+Answer:
+Ans. Option (c)
+
+Explanation: On deletion from the parent table, the name in sells table will be set to NULL and since Cascade is used with the update so when we update parent table 
+Beer the names will be updated in Sells table also. 
+Now when the query runs it sums up all the price except those of NULL so total will come as 3+4+6 = 13
