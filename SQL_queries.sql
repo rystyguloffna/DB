@@ -53,4 +53,7 @@ Click to see solution
      SELECT MAX(Price) FROM Provides
      WHERE Piece = Pieces.Code
    );
-5.
+5.Сreate indexes with optimal type for the previous queries
+Create index ind_1 on provides(piece)
+or 
+Create index ind_1 on provides((max(piece))
