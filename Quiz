@@ -1,0 +1,23 @@
+1.The_____ operation allows the combining of two relations by merging pairs of tuples, one from each relation, into a single tuple.
+Join
+2.Which one of the following is used to define the structure of the relation ,deleting relations and relating schemas ?
+ Data Definition language
+3.An attribute A of datatype varchar(20) has the value “Avi”. The attribute B of datatype char(20) has value ”Reed”. 
+ Here attribute A has ____ spaces and attribute B has ____ spaces.
+ 3, 20
+4. SELECT ________ dept_name 
+   FROM instructor;
+   Distinct
+5. SELECT name, course_id
+   FROM instructor, teaches
+   WHERE instructor_ID= teaches_ID;
+   Select name, course_id from instructor natural join teaches;
+6.SELECT * FROM employee WHERE dept_name="Comp Sci";
+   “Comp Sci”
+7. ’_ _ _ ’ matches any string of ______ three characters. ’_ _ _ %’ matches any string of at ______ three characters.
+  Exactly, Atleast
+8.In SQL the spaces at the end of the string are removed by _______ function.
+  Trim
+9. Which of the following makes the transaction permanent in the database ?
+  Commit
+10.
