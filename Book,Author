@@ -1,0 +1,28 @@
+Consider the following schema:
+
+  Book(ISBN, title, year) // ISBN and title cannot be NULL
+  Author(ISBN, name) // ISBN and name cannot be NULL
+and the following view definition over this schema:
+
+  Create View V as
+    Select Book.ISBN, count(*)
+    From Book, Author
+    Where Book.ISBN = Author.ISBN
+    And Author.name Like 'A%'
+    And Book.year > 2000
+    Group By Book.ISBN
+This view is not updatable according to the SQL standard, for a number of reasons. Which of the following is a valid reason for the view being non-updatable according to the standard?
+
+Answer:
+
+Use of aggregate function COUNT. (Updatable views cannot include GROUP BY or aggregation.)
+Use of GROUP BY. (Updatable views cannot include GROUP BY or aggregation.)
+NULL values are not permitted in Book.title. (Attributes not permitted to have NULLs must be retained in updatable views.)
+Two tables in FROM clause. (Updatable views must have only one table in their top-level FROM clause.)
+Explanation: In order to be updatable according to the SQL standard, a view must:
+
+Have only one table T in its top-level FROM clause
+Not use SELECT DISTINCT in its top-level FROM clause
+Include all attributes from T that do not permit NULLs
+Not refer to T in subqueries
+Not use GROUP BY or aggregation
